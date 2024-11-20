@@ -18,7 +18,6 @@ const initialState: ContactsInitialState = {
   editContactId: null,
 }
 
-// Part 3
 export const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
@@ -54,7 +53,6 @@ export const contactsSlice = createSlice({
   },
 })
 
-// Part 4
 export const {
   addContact,
   removeContact,
