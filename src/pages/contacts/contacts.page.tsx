@@ -2,7 +2,11 @@ import { Container, Grid2, Typography } from '@mui/material'
 
 import { AddContactForm, ContactsList, SearchBox } from './components'
 
+import { useAppSelector } from '@store'
+
 export const ContactsPage = () => {
+  const contacts = useAppSelector(state => state.contacts.data)
+
   return (
     <Container maxWidth="lg">
       <Typography
@@ -25,9 +29,11 @@ export const ContactsPage = () => {
         <Grid2 size={12}>
           <AddContactForm />
         </Grid2>
-        <Grid2 size={12}>
-          <SearchBox />
-        </Grid2>
+        {contacts.length > 0 && (
+          <Grid2 size={12}>
+            <SearchBox />
+          </Grid2>
+        )}
         <Grid2 size={12}>
           <ContactsList />
         </Grid2>

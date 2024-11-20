@@ -21,14 +21,13 @@ export const ContactsList = () => {
   }, [search, contacts])
 
   const renderPlaceholder = useCallback((title: string) => {
-    return <Box sx={{ px: 2 }}>
-      <Typography
-        variant="h5"
-        color="grey.600"
-      >
-        {title}
-      </Typography>
-    </Box>
+    return (
+      <Box sx={{ px: 2 }}>
+        <Typography variant="h5" color="grey.600">
+          {title}
+        </Typography>
+      </Box>
+    )
   }, [])
 
   const renderContactItem = useCallback((contact: Contact) => {
