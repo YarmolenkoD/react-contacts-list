@@ -8,6 +8,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
+  base: '/react-contacts-list/',
   test: {
     globals: true,
     environment: 'jsdom',
