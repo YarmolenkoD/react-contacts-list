@@ -38,7 +38,6 @@ export const DotsMenu = (props: DotsMenuProps) => {
 
     return (
       <MenuItem
-        testId={`dots-menu-item-${title.toLowerCase()}`}
         role="dots-menu-item"
         key={`dots-menu-item-${title.toLowerCase()}`}
         onClick={() => {
