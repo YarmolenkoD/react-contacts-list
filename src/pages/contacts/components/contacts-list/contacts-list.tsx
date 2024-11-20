@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react'
 
-import { Grid2 } from '@mui/material'
+import { Box, Grid2, Typography } from '@mui/material'
 
 import { Contact, useAppSelector } from '@store'
 
@@ -20,6 +20,17 @@ export const ContactsList = () => {
     return contacts
   }, [search, contacts])
 
+  const renderPlaceholder = useCallback((title: string) => {
+    return <Box sx={{ px: 2 }}>
+      <Typography
+        variant="h5"
+        color="grey.600"
+      >
+        {title}
+      </Typography>
+    </Box>
+  }, [])
+
   const renderContactItem = useCallback((contact: Contact) => {
     return (
       <Grid2 key={contact.id} size={12}>
@@ -27,6 +38,14 @@ export const ContactsList = () => {
       </Grid2>
     )
   }, [])
+
+  if (contacts.length === 0) {
+    return renderPlaceholder('No items')
+  }
+
+  if (filteredContacts.length === 0) {
+    return renderPlaceholder('No items found')
+  }
 
   return (
     <Grid2 role="contacts-list" container spacing={3}>
