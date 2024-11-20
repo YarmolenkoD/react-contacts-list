@@ -69,10 +69,6 @@ export const DotsMenu = (props: DotsMenuProps) => {
         </Box>
       </IconButton>
       <StyledMenu
-        id="demo-customized-menu"
-        MenuListProps={{
-          'aria-labelledby': 'demo-customized-button',
-        }}
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
